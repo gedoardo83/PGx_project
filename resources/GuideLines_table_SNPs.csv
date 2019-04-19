@@ -1,0 +1,17 @@
+Drug	Gene	Variant	Genotype	Clinical_relevance	Category
+Amisulpride	MC4R	rs489693	AA	may have an increased likelihood of weight gain and hypertriglyceridemia when taking amisulpride	
+Citalopram	SLC6A4	LS allele	LS	may have decreased response	
+Citalopram	SLC6A4	LS allele	SS	may have decreased response and increased risk for side effects	
+Citalopram	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	
+Citalopram	HTR2A	rs7997012	GG	may be less likely to have improvement in symptoms	
+Escitalopram	SLC6A4	LS allele	SS	may have a decreased response or decreased improvement based on HAMD score reduction	
+Fluoxetine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	
+Fluoxetine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	
+Mirtazapine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	
+Mirtazapine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	
+Paroxetine	HTR1A	rs6295	CG	may have an reduced response at 4 weeks of treatment	
+Paroxetine	HTR1A	rs6295	CC	may have an reduced response at 4 weeks of treatment	
+Paroxetine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	
+Paroxetine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	
+Venlafaxine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	
+Venlafaxine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	
