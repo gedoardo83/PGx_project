@@ -218,7 +218,7 @@ while($row = <IN>) {
 				$value = $metabpheno{CYP2C19}{$1};
 				push (@metab, ($value) x $2);
 			} else {push (@metab, $metabpheno{CYP2C19}{$allele2})}
-			print join("\t", @metab)."\n";
+			#print join("\t", @metab)."\n";
 
 			my $UM = grep { $_ eq "UM"  } @metab;
 			my $PM = grep { $_ eq "PM" } @metab;
