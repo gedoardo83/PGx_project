@@ -243,7 +243,7 @@ close(IN);
 #########################
 
 #Generate header
-$header="Sample\tCYP2D6_pheno\tCYP2D6_alleles\tCYP2C19_pheno\tCYP2C19_alleles\tSLC6A4\t".join("\t", @mysnps)."\t1st_drug\n";
+$header="Sample\tCYP2D6_pheno\tCYP2D6_alleles\tCYP2C19_pheno\tCYP2C19_alleles\tSLC6A4\t".join("\t", @mysnps)."\tfirst_drug\n";
 print OUT $header;
 
 foreach $sample(keys %output) {
