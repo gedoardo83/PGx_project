@@ -1,0 +1,58 @@
+Sample	CYP2D6_pheno	CYP2D6_alleles	CYP2C19_pheno	CYP2C19_alleles	SLC6A4	rs3211371	rs56337013	rs35694136	1st_drug
+NA17060					LS	C/C	C/C	T/T	Venlafaxine
+NA17205	IM	*1/*41	IM	*1/*2	LL	C/T	C/C	NA	Venlafaxine
+NA17132	NA	*10/*17	IM	*1/*1			
+NA17109	NA	*10/*10	IM	*2/*17	SS	C/C	C/C	NA	Amisulpride
+NA04671					LL	C/C	C/C	NA	Venlafaxine
+NA17259	IM	*4/*41	IM	*1/*1			
+NA17207	IM	*2A/*41	IM	*1/*2			
+NA17155	UM	*2A/*17x2	IM	*1/*17			
+NA17120	EM	*1/*10	IM	*1/*17			
+NA17225	PM	*4/*4	IM	*1/*1			
+NA17203					LS	T/T	C/C	T/T	Citalopram
+NA17051					LS	C/C	C/C	T/T	Amisulpride
+NA17144	IM	*1/*17	IM	*1/*2			
+NA17227	IM	*1/*9	IM	*1/*1			
+NA17209	IM	*1/*4	IM	*1/*1			
+NA17245	IM	*2A/*4	IM	*1/*2			
+NA17239	IM	*1/*4	IM	*1/*17			
+NA14476	IM	*2/*41	IM	*1/*1			
+NA17206	IM	*2A/*4	IM	*1/*1			
+NA17112	EM	*1/*1	IM	*1/*1			
+NA17108					LL	C/C	C/C	NA	Venlafaxine
+NTC					LL	NA	NA	NA	Citalopram
+NA17242	EM	*1/*1	IM	*1/*1			
+NA17216	EM	*1/*1	IM	*1/*1			
+NA17128	IM	*1/*15	IM	*1/*1			
+NA17125	EM	*1/*1	IM	*1/*1	LL	C/C	C/C	NA	Citalopram
+NA17258	IM	*1/*41	IM	*1/*2			
+Empty					LS	NA	NA	NA	Citalopram
+NA17221	UM	*1/*2Ax2	IM	*1/*1			
+NA17034					LS	C/C	C/C	NA	Venlafaxine
+NA17217	IM	*1/*41	IM	*1/*1			
+NA17004					SS	C/C	C/C	T/T	Amisulpride
+NA17202					LS	C/T	C/C	T/T	Amisulpride
+NA17254	IM	*4/*41	IM	*1/*1			
+NA17232	UM	*2A/*2Ax2	IM	*2/*17			
+NA17139	IM	*1/*29	IM	*1/*2			
+NA17053					LS	C/T	C/C	T/T	Citalopram
+NA17005					LL	C/C	C/C	T/T	Citalopram
+NA17137	IM	*2/*29	IM	*1/*1			
+NA17059					LL	C/C	C/C	NA	Citalopram
+NA17117	IM	*4/*10x2	IM	*1/*1			
+NA17210	IM	*1/*4	IM	*1/*1			
+NA17130	EM	*1/*2A	IM	*1/*17			
+NA17247	EM	*1/*2A	IM	*1/*1			
+NA17104	UM	*2A/*2Ax2	IM	*1/*17	LS	C/C	C/C	NA	Amisulpride
+NA17211	IM	*2A/*4	IM	*1/*1			
+NA17105	PM	*4x2/*70	IM	*1/*2	LS	C/C	C/C	NA	Citalopram
+NA17237	IM	*1/*4	IM	*2/*17			
+NA17201					LS	C/C	C/C	T/T	Venlafaxine
+NA17118	EM	*1/*2	IM	*1/*1			
+NA17223	EM	*1/*1	IM	*1/*17			
+NA17057					SS	C/C	C/C	NA	Amisulpride
+NA17055					LL	C/C	C/C	NA	Venlafaxine
+NA17148	EM	*1/*1	IM	*1/*17			
+NA17126	IM	*1/*29	IM	*1/*2			
+NA17208					SS	C/T	C/C	T/T	Amisulpride
+NA17114	IM	*1/*5	IM	*1/*1			
