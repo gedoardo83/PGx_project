@@ -19,7 +19,7 @@
 ###  Define relevant SNPs besides CYP2D6 and CYP2C19 ###
 ########################################################
 
-@mysnps = ("rs3211371", "rs56337013", "rs35694136"); # ("rs489693","rs4713916","rs7997012","rs6295");
+@mysnps = ("rs489693","rs4713916","rs7997012","rs6295");
 
 #####################################
 ###  READ COMMAND-LINE ARGUMENTS  ###
@@ -118,6 +118,11 @@ close(IN);
 ################################
 
 print "INFO\tReading genotype matrix file...\n";
+
+$command = 'sed -i \'s/\r/\n/g\' '.$genofile;
+#print "$command\n";
+system($command);
+
 open(IN, $genofile);
 while($row = <IN>) {
 	next if ($row=~ /^#/); #skip comment lines
@@ -151,7 +156,7 @@ print "INFO\tReading AlleleTyper results file...\n";
 
 #Eventually change ^M to standard \n end-line charcter
 $command = 'sed -i \'s/\r/\n/g\' '.$inputfile;
-print "$command\n";
+#print "$command\n";
 system($command);
 
 #Read AlleleTyper results

@@ -1,0 +1,1 @@
+Sample	CYP2D6_pheno	CYP2D6_alleles	CYP2C19_pheno	CYP2C19_alleles	SLC6A4	rs489693	rs4713916	rs7997012	rs6295	first_drug
