@@ -1,17 +1,17 @@
 Drug	Gene	Variant	Genotype	Clinical_relevance	Category
 Amisulpride	MC4R	rs489693	A/A	may have an increased likelihood of weight gain and hypertriglyceridemia when taking amisulpride	yellow
 Citalopram	SLC6A4	LS allele	LS	may have decreased response	yellow
-Citalopram	SLC6A4	LS allele	SS	may have decreased response and increased risk for side effects	yellow
+Citalopram	SLC6A4	LS allele	SS	may have decreased response and increased risk for side effects	red
 Citalopram	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow
 Citalopram	HTR2A	rs7997012	G/G	may be less likely to have improvement in symptoms	yellow
-Escitalopram	SLC6A4	LS allele	SS	may have a decreased response or decreased improvement based on HAMD score reduction	red
+Escitalopram	SLC6A4	LS allele	SS	may have a decreased response or decreased improvement based on HAMD score reduction	yellow
 Fluoxetine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow
 Fluoxetine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow
 Mirtazapine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow
-Mirtazapine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	red
-Paroxetine	HTR1A	rs6295	C/G	may have an reduced response at 4 weeks of treatment	red
+Mirtazapine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow
+Paroxetine	HTR1A	rs6295	C/G	may have an reduced response at 4 weeks of treatment	yellow
 Paroxetine	HTR1A	rs6295	C/C	may have an reduced response at 4 weeks of treatment	yellow
-Paroxetine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	red
+Paroxetine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow
 Paroxetine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow
-Venlafaxine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	red
+Venlafaxine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow
 Venlafaxine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow
