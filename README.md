@@ -9,6 +9,7 @@ Do not alter directory structure and do not change filenames for files in resour
 
 ### Additional tab-separted files to be prepared
 Each files contains a header and the first column containing sample ids (MUST BE the same as reported in OpenArray files)
+
 3. SLC6A4: patients IDs (col1) and L/S genotype (col2) for SLC6A4 gene
 4. 1stDrug: patients IDs (col1) and first drugs used (col2)
 
@@ -33,6 +34,7 @@ The script takes your genotyping results as input and create tables needed for t
 `bash Process_results.sh AlleleTyper_file TaqManGenotyper_file SLC6A4_file 1stDrug_file`
 
 <br>
+
 At the end pf process you will have
 * sample_tables/[presentdate]_samples_genos.csv: contains the processed dataset for the current input data
 * sample_tables/ALL_samples_genos.csv: contains the overall dataset used for the report for all samples analyzed so far (genotypes, CYP alleles, 1st drug)
