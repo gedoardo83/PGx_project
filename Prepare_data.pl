@@ -62,15 +62,19 @@ print	"##Arguments as interpreted##\n".
 ##########################################
 
 #Read Assay ID conversion table
-print "INFO\tReading Assay ID file...\n";
+print "INFO\tReading AIF file...\n";
 
 open(IN, $assayIDfile);
+$header = <IN>;
+$header = <IN>;
+$header = <IN>;
+$header = <IN>;
 $header = <IN>;
 
 while($row = <IN>) {
   chomp($row);
   @line = split("\t", $row);
-  $assayID{$line[0]}=$line[2];
+  $assayID{$line[6]}=$line[42];
 }
 close(IN);
 

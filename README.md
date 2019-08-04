@@ -5,30 +5,42 @@ Do not alter directory structure and do not change filenames for files in resour
 ## You will need the following files. Filenames are not important:
 ### Files from OpenArray
 1. Alleletyper: TXT file results exported from AlleleTyper
-2. GenoMatrix: Genotype matrix exported from OpenArray software
+2. GenoMatrix: Genotype matrix exported from TaqMan Genotyper
 
 ### Additional tab-separted files to be prepared
 Each files contains a header and the first column containing sample ids (MUST BE the same as reported in OpenArray files)
-<br>3. SLC6A4: patients IDs (col1) and L/S genotype (col2) for SLC6A4 gene
-<br>4. 1stDrug: patients IDs (col1) and first drugs used (col2)
+3. SLC6A4: patients IDs (col1) and L/S genotype (col2) for SLC6A4 gene
+4. 1stDrug: patients IDs (col1) and first drugs used (col2)
 
-### Update the samples_info.csv file
+<br>
+Examples of all input files are provided in example_input_files folder
+
+## Resource files present in the resources folder
+These files are already present in the folder and are not supposed to be modified
+* CustomArray_AIF.txt: AIF file of the custom openarray design
+* Metabolizer_table.csv: cyp gene (col1), star allele (col2) and metabolyzer pheno (col3)
+* Two Guideline files containing information for translating genotypes into reccomenations
+
+## Procedure to generate new reports
+### 1. Update the samples_info.csv file present in the main folder
 This is a 3-columns tab-separated file containing subject informations and header. Columns names must be as follows: Clinician, Sample, Group_PGx.
-<br>Clinician = Clinician unique code
-<br>Sample = Sample unique code (MUST BE the same used in genotyping)
-<br>Group_PGx = 1 for having a report, 0 for exluded from report
+* Clinician = Clinician unique code
+* Sample = Sample unique code (MUST BE the same used in genotyping)
+* Group_PGx = 1 for having a report, 0 for excluded from report
 
-### Resource files present in the resources folder
-AssayID_to_rsID.txt: assayID (col1), gene_name (col2) and rsID (col3)
-<br>Metabolizer_table.csv: cyp gene (col1), star allele (col2) and metabolyzer pheno (col3)
-<br>Two Guideline files containing information for translating genotypes into reccomenations
+### 2. Use the Process_results.sh script
+The script takes your genotyping results as input and create tables needed for the PGx report. New results are added to previous datasets eventually present in the folders and everything is automatically updated and deployed to web application
+`bash Process_results.sh AlleleTyper_file TaqManGenotyper_file SLC6A4_file 1stDrug_file`
 
-## Steps to update PGx report web app
+<br>
+At the end pf process you will have
+* sample_tables/[presentdate]_samples_genos.csv: contains the processed dataset for the current input data
+* sample_tables/ALL_samples_genos.csv: contains the overall dataset used for the report for all samples analyzed so far (genotypes, CYP alleles, 1st drug)
+* your input files are moved to input_data folder with the current date prefix for archiving
 
-Use the Process_results.sh script
-The script take your genotyping results as input and create tables need for the PGx report. New results are added to previous dataset eventually present in the folders and everything is automatically updated and deployed to web application
-<br>`bash Process_results.sh  AlleleTyper_file GenoMatrix_file SLC6A4_file 1stDrug_file`
+## Restore the last version of data
+During process, the last datasets are stored as .old files in 
+* samples_tables folder: samples_tables/ALL_samples_genos.old
+* web_app folder: web_app/samples_genos.old
 
-At the end the overall dataset of relevant genotypes is created in sample_tables/ALL_samples_genos.csv
-Your input files are archived in input_data folder
-Previous datasets are stored as .old files in sample_data folder and web_app folder
+If anything go wrong during process of new files, you MUST replace the newly created .csv files with the .old ones. This will ensure that the web app still run while you fix the problem. DO NOT attempt 2 subsequent updates that are likely to fail before having restored the backup files.

@@ -25,10 +25,9 @@ while($row=<IN>) {
 @diff = array_minus(@genosamples, @infosamples);
 
 if (scalar @diff > 0) {
-  $message = << "END_MESSAGE";
-  WARNING!! scalar(@diff) SAMPLES ARE MISSING FROM sample_info.csv
-  Following samples have genotypes but are not found:
-  join("\n",@diff)
-END_MESSAGE
-  print $message;
+  print "####################################################################\n";
+  print "WARNING!! ".scalar(@diff)." SAMPLES ARE MISSING FROM sample_info.csv\n";
+  print "Following samples have genotypes but are not found in sample_info.csv:\n";
+  print join("\n",@diff)."\n";
+  die;
 }

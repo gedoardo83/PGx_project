@@ -72,6 +72,15 @@ echo $(($SAMPLECOUNT-1)) >> $PGXFOLDER/sample_tables/Current_version.log
 #Check if sample information are provided in samples_info.csv file
 perl $PGXFOLDER/Check_samples.pl $PGXFOLDER/sample_tables/ALL_samples_genos.csv $PGXFOLDER/samples_info.csv
 
+if [ $? -eq 255 ]
+then
+  echo "#########################################################################"
+  echo "WARNING! SAMPLES IN samples_info.csv DO NOT MATCH SAMPLES WITH GENOTYPES!"
+  echo "#####  WEB APP NOT UPDATED!  #####"
+  echo "Please restore last version of genotype file, correct samples_info.csv and repeat"
+  exit 1
+fi
+
 #Update files into web_app folder
 if [ -f "$PGXFOLDER/web_app/samples_genos.csv" ]; then
   mv $PGXFOLDER/web_app/samples_genos.csv $PGXFOLDER/web_app/samples_genos.old

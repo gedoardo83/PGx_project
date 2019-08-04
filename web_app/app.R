@@ -16,8 +16,9 @@ ui <- fluidPage(
    # Application title
    titlePanel("PGx Report"),
    
-   # Sidebar to select sample 
+    
    sidebarLayout(
+     # Sidebar to select sample
       sidebarPanel(
         #text box to input clinician code
         textInput("ClinCode", h3("Clinician code"),
@@ -37,12 +38,12 @@ ui <- fluidPage(
         tabPanel("Drug details",
           uiOutput("Drugs"),
           h3(textOutput("DrugCategory")),
-          h4("Recommendations based on CYP"),
+          h4("Reccomendations based on CYP"),
           DT::dataTableOutput("DrugCYPDetails"),
-          h4("Recommendations based on other SNPs"),
+          h4("Reccomendations based on other SNPs"),
           DT::dataTableOutput("DrugSNPDetails")),
         tabPanel("Genotypes",
-          h4("Recommendations based on other SNPs"),
+          h4("Reccomendations based on other SNPs"),
           DT::dataTableOutput("GenoDetails") )
         )
       )
@@ -57,8 +58,8 @@ server <- function(input, output) {
   drugs_category <- reactiveValues(red = character(), yellow = character(), green = character())
   samples_info <- read.table("samples_info.csv", header=T, as.is=T)
   samples_genos <- read.table("samples_genos.csv", header=T, as.is=T)
-  guidelines_CYP <- read.table("GuideLines_table_CYP.csv", header=T, sep="\t", as.is=T)
-  guidelines_SNP <- read.table("GuideLines_table_SNPs.csv", header=T, sep="\t", as.is=T)
+  guidelines_CYP <- read.table("GuideLines_table_CYP.csv", header=T, sep="\t", quote="", as.is=T)
+  guidelines_SNP <- read.table("GuideLines_table_SNPs.csv", header=T, sep="\t", quote="", as.is=T)
   clinicians <- unique(samples_info$Clinician)
   mysample_df <- data.frame(Green=character(), Yellow=character(), Red=character())
   
@@ -163,7 +164,7 @@ server <- function(input, output) {
     }
     mydetail_CYP <- rbind(mydetail_CYP2D6,mydetail_CYP2C19)
     if (nrow(mydetail_CYP)>0) {
-      mydetail_CYP[,c(2,8,3:6)]
+      mydetail_CYP[,c(2,9,3:8)]
     } else {mydetail_CYP}
   })
   
@@ -177,7 +178,7 @@ server <- function(input, output) {
     mydetail_SNP <- rbind(mydetail_SNP, guidelines_SNP[guidelines_SNP$Drug == selected_drug & guidelines_SNP$Variant == "rs4713916" & guidelines_SNP$Genotype == samples_genos$rs4713916[samples_genos$Sample == selected_sample],])
     mydetail_SNP <- rbind(mydetail_SNP, guidelines_SNP[guidelines_SNP$Drug == selected_drug & guidelines_SNP$Variant == "rs7997012" & guidelines_SNP$Genotype == samples_genos$rs7997012[samples_genos$Sample == selected_sample],])
     mydetail_SNP <- rbind(mydetail_SNP, guidelines_SNP[guidelines_SNP$Drug == selected_drug & guidelines_SNP$Variant == "rs6295" & guidelines_SNP$Genotype == samples_genos$rs6295[samples_genos$Sample == selected_sample],])    
-    mydetail_SNP[,2:5]
+    mydetail_SNP[,c(2:5,7)]
   })
   
   
