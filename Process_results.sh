@@ -99,7 +99,8 @@ echo "Number of samples:" >> $PGXFOLDER/web_app/Data_version.log
 echo $(($SAMPLECOUNT-1)) >> $PGXFOLDER/web_app/Data_version.log
 
 #Upload app files
-cd $PGXFOLDER/web_app
-Rscript --vanilla UpdateApp.R
+#This is not necessary anymore, the app now run directly from the server
+#cd $PGXFOLDER/web_app
+#Rscript --vanilla UpdateApp.R
 
-cd ..
+#cd ..
