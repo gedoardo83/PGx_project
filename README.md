@@ -7,10 +7,9 @@ Do not alter directory structure and do not change filenames for files in resour
 1. Alleletyper: TXT file results exported from AlleleTyper.
 
 This file needs to be processed to remove ^M character. Use the following command
-
 `sed -i "s/^M//g" Alleletyper_file`
-
 To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then press V and M in succession.
+
 2. GenoMatrix: Genotype matrix exported from TaqMan Genotyper
 
 ### Additional tab-separted files to be prepared
