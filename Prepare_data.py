@@ -154,6 +154,8 @@ CYP_alleles_table['CYP2C19_pheno'] = ""
 cnv = re.compile('(\*[0-9]+)x([0-9]+)')
 col_idx = CYP_alleles_table.columns.get_loc('CYP2D6_pheno')
 
+missed_diplotypes = []
+
 #CYP2D6 pheno
 for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
     m = cnv.search(geno)
@@ -166,7 +168,9 @@ for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
                 if geno_new in CYP2D6_pheno['Diplotype'].values:
                     CYP_alleles_table.iloc[idx,col_idx]=CYP2D6_pheno.loc[CYP2D6_pheno['Diplotype']==geno_new, 'Phenotype'].values[0]
                 else:
-                    CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
+					print("CYP2D6 dyplotype not found:", geno)
+					missed_diplotypes.append(geno)
+					CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
         elif m.group(2) > 2:
             geno_new = re.sub(r'x[3-9]+','xM', geno)
             if geno_new in CYP2D6_pheno['Diplotype'].values:
@@ -176,12 +180,16 @@ for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
                 if geno_new in CYP2D6_pheno['Diplotype'].values:
                     CYP_alleles_table.iloc[idx,col_idx]=CYP2D6_pheno.loc[CYP2D6_pheno['Diplotype']==geno_new, 'Phenotype'].values[0]
                 else:
-                    CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
+					print("CYP2D6 dyplotype not found:", geno)
+					missed_diplotypes.append(geno)
+					CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
     else:
         if geno in CYP2D6_pheno['Diplotype'].values:
             CYP_alleles_table.iloc[idx,col_idx]=CYP2D6_pheno.loc[CYP2D6_pheno['Diplotype']==geno, 'Phenotype'].values[0]
         else:
-            CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
+			print("CYP2D6 dyplotype not found:", geno)
+			missed_diplotypes.append(geno)
+			CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
 
 #CYP2C19 pheno
 col_idx = CYP_alleles_table.columns.get_loc('CYP2C19_pheno')
@@ -252,23 +260,24 @@ copyfile(args.slc6a4), INPUT_DIR+"/"+current_time+"_slc6a4.txt"
 #Save some info to log file
 log_file = LOG_DIR + "/" + current_time + "_log.txt"
 with open(log_file, "w+") as log:
-	log.write("Log created on:", current_time, "\n")
+	log.write("Log created on: " + current_time + "\n")
 	
 	log.write("\n## GENERAL CONFIGURATION ##\n")
-	log.write("Population:", POP, "\n")
-	log.write("Additional SNPs:", ','.join(SNPS), "\n")
-	log.write("Web app folder:", APP_DIR,"\n")
+	log.write("Population: " + POP + "\n")
+	log.write("Additional SNPs: " + ','.join(SNPS) + "\n")
+	log.write("Web app folder: " + APP_DIR + "\n")
 
 	log.write("\n## RESOURCES FILES ##\n")
-	log.write("CYP2D6 metabolyzer phenos:", cyp2d6_pheno_file, "\n")
-	log.write("CYP2C19 metabolyzer phenos:", cyp2c19_pheno_file, "\n")
-	log.write("CYP2D6 diplotype AF:", cyp2d6_af_table, "\n")
-	log.write("AIF file:", aif_file, "\n")
+	log.write("CYP2D6 metabolyzer phenos: " + cyp2d6_pheno_file + "\n")
+	log.write("CYP2C19 metabolyzer phenos: " + cyp2c19_pheno_file + "\n")
+	log.write("CYP2D6 diplotype AF: " + cyp2d6_af_table + "\n")
+	log.write("AIF file: " + aif_file + "\n")
 	
 	log.write("\n## INPUT FILES ##\n")
-	log.write("Negative control sample id:", args.ntc_id,"\n")
-	log.write("Sample information file:", args.sample_data,"\n")
-	log.write("Allele typer file:", args.cyp_alleles,"\n")
-	log.write("TaqMan genotyper file:", args.genos, "\n")
-	log.write("SLC6A4 alleles:", args.slc6a4, "\n")
+	log.write("Negative control sample id: " + args.ntc_id + "\n")
+	log.write("Sample information file: " + args.sample_data + "\n")
+	log.write("Allele typer file: " + args.cyp_alleles + "\n")
+	log.write("TaqMan genotyper file: " + args.genos + "\n")
+	log.write("SLC6A4 alleles: " + args.slc6a4 + "\n")
 	
+	log.write("CYP2D6 diplotype not found: " + ';'.join(missed_diplotypes) + "\n")
