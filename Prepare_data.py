@@ -40,6 +40,11 @@ SNPS = ["rs489693","rs4713916","rs7997012","rs6295"]
 now = datetime.now()
 current_time = now.stftime("%Y%m%d_%H%M%S")
 
+def tokenize(line,sep="\t"):
+	line = line.rstrip('\n')
+	line = line.split(sep)
+	return line
+
 #simple reader for a file plan text or gzip
 def reader(file, sep, header=True, skipper=None):
 	if file.endswith('gz'):
