@@ -1,9 +1,9 @@
-Clinician	Sample	Group_PGx
-B01	RF16_1	1
-B01	RF16_2	1
-B01	RF16_3	0
-T01	RF16_4	0
-T01	RF16_5	1
-T01	RF16_6	0
-V01	RF16_7	1
-V01	RF16_8	1
+Clinician	Sample	Group_PGx first_drug
+B01	RF16_1	1   Citalopram
+B01	RF16_2	1   Venlafaxine
+B01	RF16_3	0   Escitalopram
+T01	RF16_4	0   Escitalopram
+T01	RF16_5	1   Citalopram
+T01	RF16_6	0   Fluoxetine
+V01	RF16_7	1   Fluoxetine
+V01	RF16_8	1   Venlafaxine

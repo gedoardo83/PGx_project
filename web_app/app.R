@@ -81,14 +81,14 @@ server <- function(input, output) {
   #Update report to display 1st drug used in the subject
   output$firstDrug <- renderText({
     selected_sample <- input$SampleList
-    first_drug <- samples_genos$first_drug[samples_genos$Sample==selected_sample]
+    first_drug <- samples_info$first_drug[samples_info$Sample==selected_sample]
     paste("1st drug: ", first_drug)
   })
     
   #Create table with drugs classified in green/yellow/red categories
   output$mygenos = DT::renderDataTable({
     selected_sample <- input$SampleList
-    first_drug <- samples_genos$first_drug[samples_genos$Sample==selected_sample]
+    first_drug <- samples_info$first_drug[samples_info$Sample==selected_sample]
     mydrugs <- all_drugs[which(all_drugs != first_drug)]
     red_drugs <- character()
     yellow_drugs <- character()
@@ -132,7 +132,7 @@ server <- function(input, output) {
   #Reactive drop-down box to show PGx details for each drug
   output$Drugs <- renderUI({
     selected_sample <- input$SampleList
-    first_drug <- samples_genos$first_drug[samples_genos$Sample==selected_sample]
+    first_drug <- samples_pheno$first_drug[samples_pheno$Sample==selected_sample]
     mydrugs <- all_drugs[which(all_drugs != first_drug)]
     selectInput("DrugList", h4("Select drug to obtain details:"), choices = mydrugs)
   })
@@ -156,11 +156,11 @@ server <- function(input, output) {
     
     mydetail_CYP2D6<-guidelines_CYP[guidelines_CYP$Drug == selected_drug & guidelines_CYP$Gene == "CYP2D6" & guidelines_CYP$Phenotype == samples_genos$CYP2D6_pheno[samples_genos$Sample == selected_sample],] 
     if (nrow(mydetail_CYP2D6)>0) {
-      mydetail_CYP2D6$Genotype <- samples_genos$CYP2D6_alleles[samples_genos$Sample == selected_sample]
+      mydetail_CYP2D6$Genotype <- samples_genos$CYP2D6[samples_genos$Sample == selected_sample]
     }
     mydetail_CYP2C19<-guidelines_CYP[guidelines_CYP$Drug == selected_drug & guidelines_CYP$Gene == "CYP2C19" & guidelines_CYP$Phenotype == samples_genos$CYP2C19_pheno[samples_genos$Sample == selected_sample],]
     if (nrow(mydetail_CYP2C19) >0) {
-      mydetail_CYP2C19$Genotype <- samples_genos$CYP2C19_alleles[samples_genos$Sample == selected_sample]
+      mydetail_CYP2C19$Genotype <- samples_genos$CYP2C19[samples_genos$Sample == selected_sample]
     }
     mydetail_CYP <- rbind(mydetail_CYP2D6,mydetail_CYP2C19)
     if (nrow(mydetail_CYP)>0) {
