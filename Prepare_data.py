@@ -108,7 +108,7 @@ print("Reading AIF file:", aif_file)
 AIF_table = pd.read_csv(aif_file, sep="\t", header=0, comment='*', encoding = "ISO-8859-1", usecols=['Assay ID','NCBI SNP Reference'])
 
 #Store sample infos
-sample_cols = [c-1 for c in args.sample_cols.split(',')]
+sample_cols = [int(c)-1 for c in args.sample_cols.split(',')]
 samples_info = pd.read_csv(args.sample_data, sep="\t", header=0)
 samples_info = samples_info.iloc[:,args.sample_cols.split(',')]
 samples_info.columns=['Clinician','Sample','Group_PGx','first_drug']
