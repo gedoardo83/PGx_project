@@ -38,7 +38,7 @@ POP = 'European'
 SNPS = ["rs489693","rs4713916","rs7997012","rs6295"]
 
 now = datetime.now()
-current_time = now.stftime("%Y%m%d_%H%M%S")
+current_time = now.strftime("%Y%m%d_%H%M%S")
 
 def tokenize(line,sep="\t"):
 	line = line.rstrip('\n')
