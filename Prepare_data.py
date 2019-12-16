@@ -110,7 +110,7 @@ AIF_table = pd.read_csv(aif_file, sep="\t", header=0, comment='*', encoding = "I
 #Store sample infos
 sample_cols = [int(c)-1 for c in args.sample_cols.split(',')]
 samples_info = pd.read_csv(args.sample_data, sep="\t", header=0)
-samples_info = samples_info.iloc[:,args.sample_cols.split(',')]
+samples_info = samples_info.iloc[:,sample_cols]
 samples_info.columns=['Clinician','Sample','Group_PGx','first_drug']
 samples_info.set_index('Sample',inplace=True)
 
