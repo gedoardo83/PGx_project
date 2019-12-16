@@ -80,7 +80,7 @@ parser.add_argument("-g", "--genos", help="Genotype matrix for SNP from taqman g
 parser.add_argument("-c", "--cyp_alleles", help="CYP alleles from Allele Typer", action="store", required=True)
 parser.add_argument("-l", "--slc6a4", help="Long / short alleles for SLC6A4", action="store", required=True)
 parser.add_argument("-r", "--resources", help="Resources folder for metabolyzer table, AIF file and haplotype frequencies", action="store", default=RESOURCES_DIR, required=False)
-parser.add_argument("-r", "--ntc_id", help="Sample ID for negative control, this will be removed from tables", action="store", default='NTC', required=False)
+parser.add_argument("-n", "--ntc_id", help="Sample ID for negative control, this will be removed from tables", action="store", default='NTC', required=False)
 args = parser.parse_args()
 
 cyp2d6_pheno_file = RESOURCES_DIR + "/" + CYP2D6_PHENO
