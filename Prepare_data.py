@@ -168,9 +168,9 @@ for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
                 if geno_new in CYP2D6_pheno['Diplotype'].values:
                     CYP_alleles_table.iloc[idx,col_idx]=CYP2D6_pheno.loc[CYP2D6_pheno['Diplotype']==geno_new, 'Phenotype'].values[0]
                 else:
-					print("CYP2D6 dyplotype not found:", geno)
-					missed_diplotypes.append(geno)
-					CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
+                    print("CYP2D6 dyplotype not found:", geno)
+                    missed_diplotypes.append(geno)
+                    CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
         elif m.group(2) > 2:
             geno_new = re.sub(r'x[3-9]+','xM', geno)
             if geno_new in CYP2D6_pheno['Diplotype'].values:
