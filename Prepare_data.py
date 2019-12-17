@@ -123,7 +123,10 @@ cyp2d6_af_table.sort_values(POP, ascending=False, inplace=True)
 ###  Read actual results for CYPs, SNPs and SLC6A4  ###
 #######################################################
 
+print("\n### Processing genotyping data ###")
+
 #Read CYPs alleles from allele typer
+print("Allele typer CYP results:", args.cyp_alleles)
 CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=12, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
 CYP_alleles_table.rename(columns={'sample ID' : 'Sample'}, inplace=True)
 CYP_alleles_table.set_index('Sample', inplace=True)
@@ -157,6 +160,7 @@ col_idx = CYP_alleles_table.columns.get_loc('CYP2D6_pheno')
 missed_diplotypes = []
 
 #CYP2D6 pheno
+print("Converting CYP2D6 diplotypes to metabolizer")
 for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
     m = cnv.search(geno)
     if m is not None:
@@ -192,6 +196,7 @@ for idx, geno in enumerate(CYP_alleles_table['CYP2D6'].values):
             CYP_alleles_table.iloc[idx,col_idx]="UNDETERMINED"
 
 #CYP2C19 pheno
+print("Converting CYP2C19 diplotypes to metabolyzer")
 col_idx = CYP_alleles_table.columns.get_loc('CYP2C19_pheno')
 for idx, geno in enumerate(CYP_alleles_table['CYP2C19'].values):
     if geno in CYP2C19_pheno['Diplotype'].values:
@@ -202,6 +207,7 @@ CYP_alleles_table.head()
 
 
 #Read genotypes from TaqMan genotyper
+print("\nTaqMan genotyper results:", args.genos)
 geno_table = pd.read_csv(args.genos, sep=",", skiprows=15, encoding = "ISO-8859-1")
 geno_table.rename(columns=AIF_table.to_dict()['NCBI SNP Reference'], inplace=True)
 geno_table = geno_table[['Sample/Assay'] + SNPS]
@@ -213,9 +219,11 @@ if 'Run date' in geno_table.index.values:
     geno_table.drop('Run date', inplace=True)
 
 #Read SLC6A4 LS results
+print("\nSLC6A4 L-S alleles:", args.slc6a4)
 SLC6A4_table = pd.read_csv(args.slc6a4, sep="\t", header=0, index_col='Sample')
 
 #Check that samples provided in results tables are in sample_info table
+print("\n### Checking sample info consistency ###")
 result = all(elem in samples_info.index.values for elem in geno_table.index.values)
 if not result:
     print("Genotype table contains samples not found in sample information table")
@@ -234,6 +242,7 @@ samples_info = samples_info.merge(SLC6A4_table, on='Sample')
 samples_info = samples_info.merge(geno_table, on='Sample')
 
 #Update tables for web app
+print("\n### Updating web-app data ###")
 app_sample_table = APP_DIR+"/samples_info.tsv"
 app_geno_table = APP_DIR+"/samples_genos.tsv"
 if os.path.isfile(app_sample_table):
@@ -246,6 +255,7 @@ else:
 	samples_info.to_csv(app_geno_table,sep="\t",header=True,columns=['CYP2D6','CYP2D6_pheno','CYP2C19','CYP2C19_pheno','SLC6A4']+SNPS)
 
 #Update data table, store old data and save input tables
+print("\n### Updating data tables ###")
 out_table = DATA_DIR+"/PGx_data.tsv"
 if os.path.isfile(out_table):
 	copyfile(out_table, DATA_DIR+"/"+current_time+"_PGx_data.tsv")	
@@ -259,6 +269,7 @@ copyfile(args.slc6a4), INPUT_DIR+"/"+current_time+"_slc6a4.txt"
 
 #Save some info to log file
 log_file = LOG_DIR + "/" + current_time + "_log.txt"
+print("\nLog written to:", log_file)
 with open(log_file, "w+") as log:
 	log.write("Log created on: " + current_time + "\n")
 	
