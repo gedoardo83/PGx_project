@@ -124,7 +124,7 @@ cyp2d6_af_table.sort_values(POP, ascending=False, inplace=True)
 #######################################################
 
 #Read CYPs alleles from allele typer
-CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=10, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
+CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=12, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
 CYP_alleles_table.rename(columns={'sample ID' : 'Sample'}, inplace=True)
 CYP_alleles_table.set_index('Sample', inplace=True)
 if ntc_id in CYP_alleles_table.index.values:
