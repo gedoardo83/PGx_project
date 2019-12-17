@@ -124,7 +124,7 @@ cyp2d6_af_table.sort_values(POP, ascending=False, inplace=True)
 #######################################################
 
 #Read CYPs alleles from allele typer
-CYP_alleles_table = pd.read_csv("detail_result.txt", sep="\t", skiprows=10, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
+CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=10, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
 CYP_alleles_table.rename(columns={'sample ID' : 'Sample'}, inplace=True)
 CYP_alleles_table.set_index('Sample', inplace=True)
 if ntc_id in CYP_alleles_table.index.values:
@@ -213,7 +213,7 @@ if 'Run date' in geno_table.index.values:
     geno_table.drop('Run date', inplace=True)
 
 #Read SLC6A4 LS results
-SLC6A4_table = pd.read_csv("example_input_files/SLC6A4_LS_example.tsv", sep="\t", header=0, index_col='Sample')
+SLC6A4_table = pd.read_csv(args.slc6a4, sep="\t", header=0, index_col='Sample')
 
 #Check that samples provided in results tables are in sample_info table
 result = all(elem in samples_info.index.values for elem in geno_table.index.values)
