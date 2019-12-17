@@ -293,3 +293,5 @@ with open(log_file, "w+") as log:
 	log.write("SLC6A4 alleles: " + args.slc6a4 + "\n")
 	
 	log.write("CYP2D6 diplotype not found: " + ';'.join(missed_diplotypes) + "\n")
+
+print("All done!")
