@@ -127,7 +127,8 @@ print("\n### Processing genotyping data ###")
 
 #Read CYPs alleles from allele typer
 print("Allele typer CYP results:", args.cyp_alleles)
-CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=12, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'])
+not_curly = lambda x: x.replace('{','').replace('}','')
+CYP_alleles_table = pd.read_csv(args.cyp_alleles, sep="\t", skiprows=12, encoding = "ISO-8859-1", usecols=['sample ID','CYP2D6','CYP2C19'], converters={'CYP2D6':no_curly})
 CYP_alleles_table.rename(columns={'sample ID' : 'Sample'}, inplace=True)
 CYP_alleles_table.set_index('Sample', inplace=True)
 if ntc_id in CYP_alleles_table.index.values:
@@ -147,7 +148,7 @@ for idx, value in enumerate(CYP_alleles_table['CYP2D6'].values):
         af_mean.append(af_sum / 2)
     
     sort_idx = sorted(range(len(af_mean)), key=lambda k: af_mean[k])
-    print(CYP_alleles_table.iloc[idx, col_idx], genos[sort_idx[0]])
+    #print(CYP_alleles_table.iloc[idx, col_idx], genos[sort_idx[0]])
     CYP_alleles_table.iloc[idx,col_idx] = genos[sort_idx[0]]
 
 #Translate diplotypes to metabolizer phenos
