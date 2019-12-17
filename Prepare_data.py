@@ -105,7 +105,7 @@ CYP2C19_pheno = pd.read_csv(cyp2c19_pheno_file, sep="\t", header=0)
 
 #Store AIF file
 print("Reading AIF file:", aif_file)
-AIF_table = pd.read_csv(aif_file, sep="\t", header=0, comment='*', encoding = "ISO-8859-1", usecols=['Assay ID','NCBI SNP Reference'], index_col='Assay ID')
+AIF_table = pd.read_csv(aif_file, sep="\t", header=0, comment='*', encoding = "ISO-8859-1", usecols=['Assay Name','NCBI SNP Reference'], index_col='Assay Name')
 
 #Store sample infos
 sample_cols = [int(c)-1 for c in args.sample_cols.split(',')]
