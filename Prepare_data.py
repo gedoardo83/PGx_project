@@ -266,7 +266,7 @@ else:
 
 copyfile(args.genos, INPUT_DIR+"/"+current_time+"_genos.txt")
 copyfile(args.cyp_alleles, INPUT_DIR+"/"+current_time+"_cyp_alleles.txt")
-copyfile(args.slc6a4), INPUT_DIR+"/"+current_time+"_slc6a4.txt"
+copyfile(args.slc6a4, INPUT_DIR+"/"+current_time+"_slc6a4.txt")
 
 #Save some info to log file
 log_file = LOG_DIR + "/" + current_time + "_log.txt"
