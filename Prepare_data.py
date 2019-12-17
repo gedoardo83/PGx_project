@@ -115,7 +115,7 @@ samples_info.columns=['Clinician','Sample','Group_PGx','first_drug']
 samples_info.set_index('Sample',inplace=True)
 
 #Read CYP2D6 AF
-cyp2d6_af_table = pd.read_csv(cyp2d6_af_file, sep="\t", header=0)
+cyp2d6_af_table = pd.read_csv(cyp2d6_af_file, sep="\t", header=0, index_col='Allele')
 cyp2d6_af_table.fillna(0, inplace=True)
 cyp2d6_af_table.sort_values(POP, ascending=False, inplace=True)
 
