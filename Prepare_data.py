@@ -75,7 +75,7 @@ def reader(file, sep, header=True, skipper=None):
 #Command line arguments
 parser = argparse.ArgumentParser(description='Process data for PGx report and create table used by the report app')
 parser.add_argument("-s", "--sample_data", help="Sample data including sampleID,clinicianID,first drug used,exp group", action="store", required=True)
-parser.add_argument("-p", "--sample_cols", help="Comma-separated col numbers for ClinicianID, SampleID, PGx_group and 1stdrug columns, in this order", action="store", default='0,1,2,3', required=False)
+parser.add_argument("-p", "--sample_cols", help="Comma-separated col numbers for ClinicianID, SampleID, PGx_group and 1stdrug columns, in this order", action="store", default='1,2,3,4', required=False)
 parser.add_argument("-g", "--genos", help="Genotype matrix for SNP from taqman genotyper", action="store", required=True)
 parser.add_argument("-c", "--cyp_alleles", help="CYP alleles from Allele Typer", action="store", required=True)
 parser.add_argument("-l", "--slc6a4", help="Long / short alleles for SLC6A4", action="store", required=True)
