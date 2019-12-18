@@ -282,7 +282,7 @@ with open(log_file, "w+") as log:
 	log.write("\n## RESOURCES FILES ##\n")
 	log.write("CYP2D6 metabolyzer phenos: " + cyp2d6_pheno_file + "\n")
 	log.write("CYP2C19 metabolyzer phenos: " + cyp2c19_pheno_file + "\n")
-	log.write("CYP2D6 diplotype AF: " + cyp2d6_af_table + "\n")
+	log.write("CYP2D6 diplotype AF: " + cyp2d6_af_file + "\n")
 	log.write("AIF file: " + aif_file + "\n")
 	
 	log.write("\n## INPUT FILES ##\n")
