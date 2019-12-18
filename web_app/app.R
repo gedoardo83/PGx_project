@@ -56,8 +56,8 @@ server <- function(input, output) {
   #Load data and prepare objects
   all_drugs <- scan("AD_ITA.list", what="", sep="\n")
   drugs_category <- reactiveValues(red = character(), yellow = character(), green = character())
-  samples_info <- read.table("samples_info.csv", header=T, as.is=T)
-  samples_genos <- read.table("samples_genos.csv", header=T, as.is=T)
+  samples_info <- read.table("samples_info.tsv", header=T, as.is=T)
+  samples_genos <- read.table("samples_genos.tsv", header=T, as.is=T)
   guidelines_CYP <- read.table("GuideLines_table_CYP.csv", header=T, sep="\t", quote="", as.is=T)
   guidelines_SNP <- read.table("GuideLines_table_SNPs.csv", header=T, sep="\t", quote="", as.is=T)
   clinicians <- unique(samples_info$Clinician)
