@@ -132,7 +132,7 @@ server <- function(input, output) {
   #Reactive drop-down box to show PGx details for each drug
   output$Drugs <- renderUI({
     selected_sample <- input$SampleList
-    first_drug <- samples_pheno$first_drug[samples_pheno$Sample==selected_sample]
+    first_drug <- samples_info$first_drug[samples_info$Sample==selected_sample]
     mydrugs <- all_drugs[which(all_drugs != first_drug)]
     selectInput("DrugList", h4("Select drug to obtain details:"), choices = mydrugs)
   })
