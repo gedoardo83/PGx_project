@@ -22,7 +22,7 @@ These files are already present in the folder and are not supposed to be modifie
 `python Prepare_data.py --sample_data Sample_info.csv --genos TaqMan_genotyper_results.txt --cyp_alleles Allele_typer_result.txt --slc6a4 SLC6A4_LS_alleles.txt`
  
 ### Mandatory arguments
-* --sample_data: Sample data including sampleID,clinicianID,first drug used,exp group
+* --sample_data: Sample data including clinicianID, sampleID, exp group, first drug used
 * --genos: Genotype matrix for SNP from taqman genotyper
 * --cyp_alleles: CYP alleles from Allele Typer
 * --slc6a4: Long / short alleles for SLC6A4
