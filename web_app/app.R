@@ -189,7 +189,7 @@ server <- function(input, output) {
   #Output details of genotypes for the selected subject
   output$GenoDetails <- DT::renderDataTable({
     selected_sample <- input$SampleList
-    mygenos <- as.data.frame(t(samples_genos[samples_genos$Sample==selected_sample,c(3,5:(ncol(samples_genos)-1))]))
+    mygenos <- as.data.frame(t(samples_genos[samples_genos$Sample==selected_sample,c(3,5:ncol(samples_genos))]))
     colnames(mygenos) <- "Genotype"
     mygenos
   }, options=list(pageLength = 25))
