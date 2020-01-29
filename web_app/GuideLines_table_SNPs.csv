@@ -1,17 +1,17 @@
 Drug	Gene	Variant	Genotype	Clinical_relevance	Category	ITA
-Amisulpride	MC4R	rs489693	AA	may have an increased likelihood of weight gain and hypertriglyceridemia when taking amisulpride	yellow	Possibile incremento ponderale e dei trigliceridi
+Amisulpride	MC4R	rs489693	A/A	may have an increased likelihood of weight gain and hypertriglyceridemia when taking amisulpride	yellow	Possibile incremento ponderale e dei trigliceridi
 Citalopram	SLC6A4	LS allele	LS	may have decreased response	yellow	Possibile riduzione dell'efficacia clinica
 Citalopram	SLC6A4	LS allele	SS	may have decreased response and increased risk for side effects	red	Riduzione dell'efficacia clinica e aumento del rischio di effetti collaterali
-Citalopram	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Citalopram	HTR2A	rs7997012	GG	may be less likely to have improvement in symptoms	yellow	Possibile riduzione dell'efficacia clinica
+Citalopram	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Citalopram	HTR2A	rs7997012	G/G	may be less likely to have improvement in symptoms	yellow	Possibile riduzione dell'efficacia clinica
 Escitalopram	SLC6A4	LS allele	SS	may have a decreased response or decreased improvement based on HAMD score reduction	yellow	Possibile riduzione dell'efficacia clinica
-Fluoxetine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Fluoxetine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Mirtazapine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Mirtazapine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Fluoxetine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Fluoxetine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Mirtazapine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Mirtazapine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
 Paroxetine	HTR1A	rs6295	CG	may have an reduced response at 4 weeks of treatment	yellow	Possibile riduzione dell'efficacia clinica
 Paroxetine	HTR1A	rs6295	CC	may have an reduced response at 4 weeks of treatment	yellow	Possibile riduzione dell'efficacia clinica
-Paroxetine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Paroxetine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Venlafaxine	FKBP5	rs4713916	AG	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
-Venlafaxine	FKBP5	rs4713916	GG	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Paroxetine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Paroxetine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Venlafaxine	FKBP5	rs4713916	A/G	may have a slightly reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
+Venlafaxine	FKBP5	rs4713916	G/G	may have a reduced response to antidepressants	yellow	Possibile riduzione dell'efficacia clinica
