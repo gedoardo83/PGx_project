@@ -43,3 +43,6 @@ All folders locations and resource files names can be modifeid as needed editing
 ## Restore the last version of data
 During process, the last web app datasets are saved in app_backup folder with the prefix of the current time.
 If anything go wrong processing new files, you MUST replace the newly created .csv files with the old ones. This will ensure that the web app still run while you fix the problem.
+
+##Version
+v.2 il diplotipo del CYP2D6 è scelto sulla base delle frequenze diplotipiche e non più sulla media delle frequenze alleliche

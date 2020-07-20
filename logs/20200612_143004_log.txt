@@ -1,0 +1,20 @@
+Log created on: 20200612_143004
+
+## GENERAL CONFIGURATION ##
+Population: European
+Additional SNPs: rs489693,rs4713916,rs7997012,rs6295
+Web app folder: web_app
+
+## RESOURCES FILES ##
+CYP2D6 metabolyzer phenos: resources/CYP2D6_Metabolyzer.csv
+CYP2C19 metabolyzer phenos: resources/CYP2C19_Metabolyzer.csv
+CYP2D6 diplotype AF: resources/CYP2D6_DF.tsv
+AIF file: resources/CustomArray_AIF.txt
+
+## INPUT FILES ##
+Negative control sample id: NTC
+Sample information file: 20200603_RF16_PGx_SI.csv
+Allele typer file: 20200603_RF16_PGx_AT.txt
+TaqMan genotyper file: 20200603_RF16_PGx_GT.csv
+SLC6A4 alleles: 20200603_RF16_PGx_LS.txt
+CYP2D6 diplotype not found: *1/*2;*1/*2;*1/*2

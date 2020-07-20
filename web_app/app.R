@@ -14,8 +14,7 @@ library(DT)
 ui <- fluidPage(
    
    # Application title
-   titlePanel("PGx Report"),
-   
+   titlePanel("PGx Report"), 
     
    sidebarLayout(
      # Sidebar to select sample
@@ -25,7 +24,10 @@ ui <- fluidPage(
           value = "Enter clinician code..."
           ),
         #list selection for samples based on clinician 
-        uiOutput("Sample")
+        uiOutput("Sample"),
+        uiOutput("TAU_samples"),
+        h4(paste0("Last update: ", file.info("samples_info.tsv")$mtime)),
+        
       ),
       
       # Show information for PGx prescription
@@ -67,11 +69,16 @@ server <- function(input, output) {
   output$Sample <- renderUI({
     selectInput("SampleList", h3("Subject code:"), choices = unique(samples_info$Sample[samples_info$Clinician==input$ClinCode & samples_info$Group_PGx==1]) )
   })
+  
+  #Show TAU groups
+  output$TAU_samples <- renderUI({
+    selectInput("TAU_list", h3("TAU samples:"), choices = sort(unique(samples_info$Sample[samples_info$Clinician == input$ClinCode & samples_info$Group_PGx == 0])))
+  })
 
   #####################
   ###  Summary tab  ###
   #####################
-
+  
   #Update report title to display sample code
   output$RepTitle <- renderText({
     selected_sample <- input$SampleList
